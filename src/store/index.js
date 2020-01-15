@@ -158,7 +158,6 @@ export default new Vuex.Store({
       state.exchangeRate = number
     },
     setFiltersToUse(state, array) {
-      console.log(array)
       state.filtersToUse = array
     },
     setItems(state, array) {

@@ -60,7 +60,7 @@ export default {
             'itemSelected'
         ]),
         relatedProducts(){
-            let tags = this.itemSelected.tags
+            let tags = this.itemSelected ? this.itemSelected.tags? this.itemSelected.tags : [] : []
             let relatedProducts = []
             for (let item of this.items) {
                 if (item._id !== this.itemSelected._id) {
@@ -72,7 +72,6 @@ export default {
                     }
                 }
             }
-            console.log(relatedProducts)
             return relatedProducts
         }
     },
