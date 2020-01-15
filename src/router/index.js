@@ -14,11 +14,14 @@ const routes = [
     path: '/:productId',
     name: 'product',
     component: () => import( '../views/Product/Product.vue')
+  },
+  {
+    path: '*',
+    redirect: '/'
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
   base: process.env.BASE_URL,
   routes
 })

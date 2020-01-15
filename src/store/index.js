@@ -10,7 +10,9 @@ export default new Vuex.Store({
     colors: [],
     currency: 'USD',
     category: 'All',
+    categories: ['All', 'Men', 'Women', 'Dresses', 'Sunglasses', 'Kids', 'Accessories'],
     items: [],
+    itemSelected: {},
     exchangeRate: 1.11,
     filtersToUse: [],
     mobileClassAddition: '-mobile',
@@ -42,6 +44,9 @@ export default new Vuex.Store({
     },
     items(state) {
       return state.items
+    },
+    itemSelected(state) {
+      return state.itemSelected
     },
     itemsToUse(state, getters) {
       let itemsToInclude = []
@@ -129,12 +134,12 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    addToCart(state, item) {
+    addToCart(state, {item, amount}) {
       let cart = [...state.cart]
       let indexFound = cart.findIndex(el=> el._id === item._id)
       if (indexFound >= 0) {
-        cart[indexFound].amount++
-      } else cart.push({_id: item._id, image: item.image, price: item.price, amount: 1, name: item.name})
+        cart[indexFound].amount += amount
+      } else cart.push({_id: item._id, image: item.image, price: item.price, amount, name: item.name})
       state.cart = cart
     },
     setCart(state, array) {
@@ -158,6 +163,9 @@ export default new Vuex.Store({
     },
     setItems(state, array) {
       state.items = array
+    },
+    setItemSelected(state, object) {
+      state.itemSelected = object
     },
     setPage(state, number) {
       state.page = number
