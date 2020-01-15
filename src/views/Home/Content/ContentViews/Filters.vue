@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import priceFilter from '@/components/Content/Filters/Price.vue'
-import colorFilter from '@/components/Content/Filters/Color.vue'
-import searchBar from '@/components/Content/Filters/SearchBar.vue'
+import priceFilter from '@/components/Home/Content/Filters/Price.vue'
+import colorFilter from '@/components/Home/Content/Filters/Color.vue'
+import searchBar from '@/components/Home/Content/Filters/SearchBar.vue'
 export default {
     components: {
         colorFilter,

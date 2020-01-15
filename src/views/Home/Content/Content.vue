@@ -25,11 +25,11 @@
 </template>
 
 <script>
-import categoriesList from '@/components/Content/CategoriesList.vue'
+import categoriesList from '@/components/Home/Content/CategoriesList.vue'
 import appFilters from './ContentViews/Filters.vue'
-import sortingBar from '@/components/Content/SortingBar.vue'
-import appItems from '@/components/Content/Items.vue' 
-import appPagination from '@/components/Content/Pagination.vue'
+import sortingBar from '@/components/Home/Content/SortingBar.vue'
+import appItems from '@/components/Home/Content/Items.vue' 
+import appPagination from '@/components/Home/Content/Pagination.vue'
 export default {
     components: {
 		appFilters,
